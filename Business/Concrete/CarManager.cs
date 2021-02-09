@@ -50,20 +50,27 @@ namespace Business.Concrete
                 if (car.DailyPrice>0)
                 {
                     _carDal.Add(car);
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Car Added Successfully");
+                    Console.ResetColor();
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error! Daily price must be higher than 0");
                     Console.WriteLine("Please write a correct value for daily price");
-                    car.DailyPrice = Convert.ToDecimal(Console.ReadLine());
+                    Console.ResetColor();
+
+                    
                 }
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Error! The character of car name must not be shorter than 2");
                 Console.WriteLine("Please write the characters of car name more than 2");
-                car.CarName = Convert.ToString(Console.ReadLine());
+                Console.ResetColor();
+                
             }
         }
 
